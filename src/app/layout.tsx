@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     description: "More than a mall. 100 million visitors. 1,200 luxury brands. The world's most iconic lifestyle destination.",
     type: "website",
   },
+  icons: {
+    icon: "/dubai.png",
+  },
 };
 
 export default function RootLayout({
