@@ -10,6 +10,7 @@ export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
@@ -53,21 +54,14 @@ export default function HeroSection() {
         }}
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          poster="/dubai-aerial.png"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            filter: "brightness(0.5)",
-          }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.5)" }}
         >
-          <source src="/hero-reel.mp4" type="video/mp4" />
+          <source src="https://www.dropbox.com/scl/fi/y04rf629h704xex7rqboa/hero-reel.mp4?rlkey=jkxknrogsbnxor89l6vfuv7u9&st=i0jbfovd&raw=1" type="video/mp4" />
         </video>
       </motion.div>
 
